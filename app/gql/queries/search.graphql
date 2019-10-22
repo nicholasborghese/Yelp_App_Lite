@@ -1,0 +1,15 @@
+query search($term: String) {
+  search(term: $term,
+          location: "new york",
+          limit: 5) {
+    total
+    business {
+      name
+      id
+      url
+      rating
+      review_count
+      photos
+    }
+  }
+}

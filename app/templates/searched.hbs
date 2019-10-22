@@ -1,0 +1,15 @@
+{{#each model.term as |business|}}
+<div class="card" style="width: 18rem;">
+  <img src={{business.photos}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{business.name}}</h5>
+    <ul>
+      <li>Rating: {{business.rating}}</li>
+      <li>Reviews: {{business.review_count}}</li>
+      <li>URL: {{business.url}}</li>
+    </ul>
+  </div>
+</div>
+{{/each}}
+
+{{outlet}}

@@ -1,0 +1,53 @@
+<Input list="searchable" @value={{term}} @placeholder="Enter search here" />
+{{!-- @enter={{action "submitter"}} 
+      index.js/controller
+        queryParams: ['term'],
+        term: null,
+        submitter(term)
+          const businesses = this.get('model.business');
+          const business = businesses.findBy('name', term);
+          if(business) {
+            this.transitiontoRoute('details', business.id);
+          } else {
+            const firstBusiness = this.get('model.business.firstObject.id');
+            if(firstBusiness) {
+              this.transitionToRoute('details', firstBuiness);
+            }
+          }
+
+
+--}}
+<datalist id="searchable">
+  {{#each model.business as |business|}}
+    {{!-- <LinkTo @route='searched' @model={{business.name}}> --}}
+      <option value={{business.name}} />
+    {{!-- </LinkTo> --}}
+  {{/each}}
+</datalist>
+
+
+{{!-- {{#each model.business as |business|}}
+<div class="card" style="width: 18rem;">
+  <img src={{business.photos}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{business.name}}</h5>
+    <ul>
+      <li>Rating: {{business.rating}}</li>
+      <li>Reviews: {{business.review_count}}</li>
+      <li>URL: {{business.url}}</li>
+    </ul>
+  </div>
+</div>
+{{/each}} --}}
+
+{{!-- <ul>
+  {{#each model.business as |business|}}
+    <li>
+      <LinkTo @route='detail' @model={{business.id}}>
+        {{business.name}}
+      </LinkTo>
+    </li>
+  {{/each}}
+</ul> --}}
+
+{{outlet}}

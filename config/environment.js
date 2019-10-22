@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   let ENV = {
+    apollo: {
+      apiURL: '/api'
+    },
     modulePrefix: 'yelp-lite-app',
     environment,
     rootURL: '/',
